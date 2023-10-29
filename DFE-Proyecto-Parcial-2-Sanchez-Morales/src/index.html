@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+  <title>To do List Adriel</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="./index.html">To Do List </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <br>
+
+    <button id="addTask" class="btn-action">Agregar nueva tarea</button>
+
+    <br>
+    <br>
+    <div class="table-container">
+
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th>Completado</th>
+            <th>Prioridad</th>
+            <th>Etiqueta</th>
+            <th>Fecha de Vencimiento</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="data-table-body">
+          <!-- Llenaremos la tabla con datos consumidos desde una api -->
+        </tbody>
+      </table>
+
+    </div>
+
+    <div id="message" class="message">
+      <p>Realiza una consulta de tareas para mostrar las tareas creadas.</p>
+    </div>
+
+    <div id="modal-background" class="modal-background">
+
+    </div>
+
+    <div id="modal" class="modal">
+
+      <h2 id="modal-title">Nueva Tarea</h2>
+
+      <form id="task-form" class="form-section">
+
+        <label for="task-title-field">Titulo:</label>
+        <input type="text" id="task-title-field" class="form-field" required>
+
+        <label for="description-field">Descripcion:</label>
+        <textarea id="description-field" class="form-field" required></textarea>
+
+        <label for="completed-field">Completada:</label>
+        <select id="completed-field" class="form-field" required>
+          <option value="false">false</option>
+          <option value="true">true</option>
+        </select>
+
+        <label for="priority-field">Prioridad:</label>
+        <select id="priority-field" class="form-field" required>
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="baja">Baja</option>
+        </select>
+
+        <label for="tag-field">Etiqueta:</label>
+        <select id="tag-field" class="form-field" required>
+          <option value="alta">Hogar</option>
+          <option value="media">Escuela</option>
+          <option value="baja">Personal</option>
+        </select>
+
+        <label for="due-date-field">Fecha de vencimiento:</label>
+        <input type="date" id="due-date-field" class="form-field" required>
+
+        <button type="submit" class="btn-submit" id="btn-submit">Guardar Tarea</button>
+
+      </form>
+
+    </div>
+
+    <div id="modal-update" class="modal">
+
+      <h2 id="modal-title">Actualizar Tarea</h2>
+
+      <form id="update-task-form" class="form-section">
+        <input type="text" id="update-task-id" class="form-field" required style="display: none;">
+
+        <label for="update-task-title-field">Titulo:</label>
+        <input type="text" id="update-task-title-field" class="form-field" required>
+
+        <label for="update-description-field">Descripcion:</label>
+        <textarea id="update-description-field" class="form-field" required></textarea>
+
+        <label for="update-completed-field">Completado:</label>
+        <select id="update-completed-field" class="form-field" required>
+          <option value="false">false</option>
+          <option value="true">true</option>
+        </select>
+
+        <label for="update-priority-field">Prioridad:</label>
+        <select id="update-priority-field" class="form-field" required>
+          <option value="alta">Alta</option>
+          <option value="media">Media</option>
+          <option value="baja">Baja</option>
+        </select>
+
+        <label for="update-tag-field">Etiqueta:</label>
+        <select id="update-tag-field" class="form-field" required>
+          <option value="alta">Hogar</option>
+          <option value="media">Escuela</option>
+          <option value="baja">Personal</option>
+        </select>
+
+        <label for="update-due-date-field">Fecha de Vencimiento:</label>
+        <input type="date" id="update-due-date-field" class="form-field" required>
+
+        <button type="submit" class="btn-submit" >Actualizar Tarea</button>
+
+      </form>
+
+    </div>
+  </main>
+  <script src="./shared/utils.js"></script>
+  <script src="./shared/fetch-api.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
